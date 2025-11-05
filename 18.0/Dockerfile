@@ -28,7 +28,6 @@ RUN apt-get update && \
         python3-pdfminer \
         python3-pip \
         python3-gtts \
-        python3-pysftp \
         python3-phonenumbers \
         python3-pyldap \
         python3-qrcode \
@@ -66,6 +65,7 @@ RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ noble-pgdg main' > /etc/a
     && rm -rf "$GNUPGHOME" \
     && apt-get update  \
     && apt-get install --no-install-recommends -y postgresql-client \
+    && pip3 install pysftp \
     && rm -f /etc/apt/sources.list.d/pgdg.list \
     && rm -rf /var/lib/apt/lists/*
 
