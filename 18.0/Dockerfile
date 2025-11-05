@@ -40,6 +40,7 @@ RUN apt-get update && \
         python3-xlrd \
         python3-xlwt \
         xz-utils && \
+        pip3 install --break-system-packages pysftp && \
     if [ -z "${TARGETARCH}" ]; then \
         TARGETARCH="$(dpkg --print-architecture)"; \
     fi; \
@@ -65,7 +66,6 @@ RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ noble-pgdg main' > /etc/a
     && rm -rf "$GNUPGHOME" \
     && apt-get update  \
     && apt-get install --no-install-recommends -y postgresql-client \
-    && pip3 install pysftp \
     && rm -f /etc/apt/sources.list.d/pgdg.list \
     && rm -rf /var/lib/apt/lists/*
 
