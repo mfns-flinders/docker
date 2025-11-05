@@ -39,6 +39,7 @@ RUN apt-get update && \
         python3-watchdog \
         python3-xlrd \
         python3-xlwt \
+        python3-paramiko \
         xz-utils && \
         pip3 install --break-system-packages pysftp && \
     if [ -z "${TARGETARCH}" ]; then \
