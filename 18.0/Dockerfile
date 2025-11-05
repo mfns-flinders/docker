@@ -28,6 +28,7 @@ RUN apt-get update && \
         python3-pdfminer \
         python3-pip \
         python3-gtts \
+        python3-pysftp \
         python3-phonenumbers \
         python3-pyldap \
         python3-qrcode \
